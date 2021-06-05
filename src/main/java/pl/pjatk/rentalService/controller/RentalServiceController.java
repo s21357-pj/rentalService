@@ -6,7 +6,6 @@ import org.springframework.web.bind.annotation.*;
 import pl.pjatk.rentalService.model.Movie;
 import pl.pjatk.rentalService.service.RentalService;
 
-import java.util.Optional;
 @RestController
 @RequestMapping("/")
 public class RentalServiceController {
@@ -17,10 +16,11 @@ public class RentalServiceController {
 
     @GetMapping("/getMovie/{id}")
     public ResponseEntity<Movie> addMovie(@PathVariable Long id) {
-        return new ResponseEntity<Movie>(rentalService.getMovies(id), HttpStatus.OK);
+        return new ResponseEntity<>(rentalService.getMovies(id), HttpStatus.OK);
     }
-    @GetMapping("/returnMovie/{id}")
+    @PutMapping("/returnMovie/{id}")
     public ResponseEntity<Void> retMovie(@PathVariable Long id) {
-        return rentalService.returnMovie(id);
+        rentalService.returnMovie(id);
+        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
 }
