@@ -12,8 +12,5 @@ public class RentalServiceApplication {
 		SpringApplication.run(RentalServiceApplication.class, args);
 	}
 
-	@Bean
-	public RestTemplate getRestTemplate() {
-		return new RestTemplate();
-	}
+
 }

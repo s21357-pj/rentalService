@@ -1,4 +1,4 @@
-package movie.model;
+package pl.pjatk.rentalService.model;
 
 public class Movie {
     private Long id;
