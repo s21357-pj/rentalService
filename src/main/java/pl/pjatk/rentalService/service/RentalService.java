@@ -13,7 +13,7 @@ public class RentalService {
         this.restTemplate = restTemplate;
     }
     public Movie getMovies(Long id) {
-        return this.restTemplate.getForObject("http://127.0.0.1:8080/movies2/" + id, Movie.class);
+        return this.restTemplate.getForObject("http://127.0.0.1:8080/movies/" + id, Movie.class);
     }
     public void returnMovie(Long id) {
         this.restTemplate.put("http://127.0.0.1:8080/movies/setTrueAvailable/" + id, null);
